@@ -724,38 +724,47 @@
     </section>
 
     <!-- 7. Дресс-код -->
-    <section id="dresscode">
-        <h2 class="section-title">Дресс-код</h2>
-        <p class="intro-text" style="font-size:1.2rem;">Нам будет очень приятно, если вы поддержите цветовую гамму торжества и выберете наряды в соответствии с цветовой палитрой нашей свадьбы.</p>
-        <div class="dress-code-colors">
-            <div class="color-item">
-                <div class="color-circle" style="background-color: rgb(228, 208, 201);"></div>
-                <div class="color-name">Светло-бежевый</div>
-            </div>
-            <div class="color-item">
-                <div class="color-circle" style="background-color: rgb(202, 171, 154);"></div>
-                <div class="color-name">Тёплый беж</div>
-            </div>
-            <div class="color-item">
-                <div class="color-circle" style="background-color: rgb(190, 10, 10);"></div>
-                <div class="color-name">Ярко-красный</div>
-            </div>
-            <div class="color-item">
-                <div class="color-circle" style="background-color: rgb(96, 5, 5);"></div>
-                <div class="color-name">Бордовый</div>
-            </div>
-            <div class="color-item">
-                <div class="color-circle" style="background-color: rgb(0, 0, 0);"></div>
-                <div class="color-name">Чёрный</div>
-            </div>
+<section id="dresscode">
+    <h2 class="section-title">Дресс-код</h2>
+    <p class="intro-text" style="font-size:1.2rem;">Нам будет очень приятно, если вы поддержите цветовую гамму торжества и выберете наряды в соответствии с цветовой палитрой нашей свадьбы.</p>
+    <div class="dress-code-colors">
+        <div class="color-item">
+            <div class="color-circle" style="background-color: rgb(228, 208, 201);"></div>
         </div>
-    </section>
+        <div class="color-item">
+            <div class="color-circle" style="background-color: rgb(202, 171, 154);"></div>
+        </div>
+        <div class="color-item">
+            <div class="color-circle" style="background-color: rgb(190, 10, 10);"></div>
+        </div>
+        <div class="color-item">
+            <div class="color-circle" style="background-color: rgb(96, 5, 5);"></div>
+        </div>
+        <div class="color-item">
+            <div class="color-circle" style="background-color: rgb(0, 0, 0);"></div>
+        </div>
+    </div>
+</section>
 
-    <!-- 8. Форма для гостей -->
-    <section class="form-section" id="rsvp">
-        <h2 class="section-title">Ваши ответы</h2>
-        <p class="intro-text" style="margin-bottom:50px; max-width:700px;">Пожалуйста, заполните эту форму до 1 июля 2026 года. Это поможет нам лучше организовать праздник.</p>
+    <!-- 8. Встроенная форма для гостей -->
+<section class="form-section" id="rsvp">
+    <h2 class="section-title">Ваши ответы</h2>
+    <p class="intro-text" style="margin-bottom:30px; max-width:700px;">Пожалуйста, заполните эту форму до 1 июля 2026 года. Это поможет нам лучше организовать праздник.</p>
 
+    <!-- Контейнер для встроенной Google Формы -->
+    <div style="width:100%; max-width:800px; margin:0 auto;">
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfMjPozTrHvHyJGN5D7iz9i9_nNqWCyCLIuJf7xZ5PSZqiz2g/viewform?embedded=true"
+                width="100%"
+                height="1450"
+                frameborder="0"
+                marginheight="0"
+                marginwidth="0"
+                style="border: none; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+            Загрузка формы...
+        </iframe>
+    </div>
+</section>
+    
         <form id="weddingForm">
             <!-- 8.1 Имя -->
             <div class="form-group">
@@ -1032,4 +1041,5 @@
         });
     </script>
 </body>
+
 </html>
