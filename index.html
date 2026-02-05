@@ -723,145 +723,56 @@
         </div>
     </section>
 
-    <!-- 7. Дресс-код -->
+    <!-- 7. Дресс-код (без названий цветов) -->
 <section id="dresscode">
     <h2 class="section-title">Дресс-код</h2>
     <p class="intro-text" style="font-size:1.2rem;">Нам будет очень приятно, если вы поддержите цветовую гамму торжества и выберете наряды в соответствии с цветовой палитрой нашей свадьбы.</p>
     <div class="dress-code-colors">
-        <div class="color-item">
-            <div class="color-circle" style="background-color: rgb(228, 208, 201);"></div>
-        </div>
-        <div class="color-item">
-            <div class="color-circle" style="background-color: rgb(202, 171, 154);"></div>
-        </div>
-        <div class="color-item">
-            <div class="color-circle" style="background-color: rgb(190, 10, 10);"></div>
-        </div>
-        <div class="color-item">
-            <div class="color-circle" style="background-color: rgb(96, 5, 5);"></div>
-        </div>
-        <div class="color-item">
-            <div class="color-circle" style="background-color: rgb(0, 0, 0);"></div>
-        </div>
+        <div class="color-item"><div class="color-circle" style="background-color: rgb(228, 208, 201);"></div></div>
+        <div class="color-item"><div class="color-circle" style="background-color: rgb(202, 171, 154);"></div></div>
+        <div class="color-item"><div class="color-circle" style="background-color: rgb(190, 10, 10);"></div></div>
+        <div class="color-item"><div class="color-circle" style="background-color: rgb(96, 5, 5);"></div></div>
+        <div class="color-item"><div class="color-circle" style="background-color: rgb(0, 0, 0);"></div></div>
     </div>
 </section>
 
-    <!-- 8. Встроенная форма для гостей -->
+<!-- 8. ВСТРОЕННАЯ ФОРМА (работающий вариант) -->
 <section class="form-section" id="rsvp">
     <h2 class="section-title">Ваши ответы</h2>
-    <p class="intro-text" style="margin-bottom:30px; max-width:700px;">Пожалуйста, заполните эту форму до 1 июля 2026 года. Это поможет нам лучше организовать праздник.</p>
+    <p class="intro-text" style="margin-bottom:30px; max-width:700px;">
+        Пожалуйста, заполните эту форму до 1 июля 2026 года. Это поможет нам лучше организовать праздник.
+    </p>
 
     <!-- Контейнер для встроенной Google Формы -->
-    <div style="width:100%; max-width:800px; margin:0 auto;">
-        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc1FhQro3c_DevvHDseIpyyj1ETDrMWra-bSDnVI2BJ29u7lg/viewform?usp=dialog"
-                width="100%"
-                height="1450"
-                frameborder="0"
-                marginheight="0"
+    <div style="width:100%; max-width:800px; margin:0 auto; border-radius: 10px; overflow: hidden; box-shadow: 0 10px 30px rgba(0,0,0,0.1); background: white;">
+        <!-- ВАША форма будет встроена здесь -->
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc1FhQro3c_DevvHDseIpyyj1ETDrMWra-bSDnVI2BJ29u7lg/viewform?embedded=true" 
+                width="100%" 
+                height="1600" 
+                frameborder="0" 
+                marginheight="0" 
                 marginwidth="0"
-                style="border: none; border-radius: 10px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+                style="border: none; display: block;"
+                title="Форма ответов на свадебное приглашение">
             Загрузка формы...
         </iframe>
     </div>
-</section>
     
-        <form id="weddingForm">
-            <!-- 8.1 Имя -->
-            <div class="form-group">
-                <label for="guestName">Ваше имя и фамилия *</label>
-                <input type="text" id="guestName" name="guestName" required placeholder="Иван Иванов">
-            </div>
-
-            <!-- 8.2 Присутствие -->
-            <div class="form-group">
-                <label>Присутствие *</label>
-                <div class="radio-group">
-                    <input type="radio" id="attend-yes" name="attendance" value="Я с удовольствием приду" required>
-                    <label for="attend-yes" class="radio-option">Я с удовольствием приду</label>
-
-                    <input type="radio" id="attend-couple" name="attendance" value="Приду с парой">
-                    <label for="attend-couple" class="radio-option">Приду с парой</label>
-
-                    <input type="radio" id="attend-no" name="attendance" value="К сожалению, не смогу присутствовать">
-                    <label for="attend-no" class="radio-option">К сожалению, не смогу</label>
-                </div>
-            </div>
-
-            <!-- 8.3 Алкоголь -->
-            <div class="form-group">
-                <label>Выберите предпочтительные напитки (можно несколько)</label>
-                <div class="checkbox-group">
-                    <input type="checkbox" id="drink1" name="drinks" value="Шампанское">
-                    <label for="drink1" class="checkbox-option">Шампанское</label>
-
-                    <input type="checkbox" id="drink2" name="drinks" value="Красное сухое вино">
-                    <label for="drink2" class="checkbox-option">Красное сухое вино</label>
-
-                    <input type="checkbox" id="drink3" name="drinks" value="Красное полусладкое вино">
-                    <label for="drink3" class="checkbox-option">Красное полусладкое</label>
-
-                    <input type="checkbox" id="drink4" name="drinks" value="Белое сухое вино">
-                    <label for="drink4" class="checkbox-option">Белое сухое вино</label>
-
-                    <input type="checkbox" id="drink5" name="drinks" value="Белое полусладкое вино">
-                    <label for="drink5" class="checkbox-option">Белое полусладкое</label>
-
-                    <input type="checkbox" id="drink6" name="drinks" value="Коньяк">
-                    <label for="drink6" class="checkbox-option">Коньяк</label>
-
-                    <input type="checkbox" id="drink7" name="drinks" value="Водка">
-                    <label for="drink7" class="checkbox-option">Водка</label>
-
-                    <input type="checkbox" id="drink8" name="drinks" value="Безалкогольные напитки">
-                    <label for="drink8" class="checkbox-option">Безалкогольные</label>
-                </div>
-            </div>
-
-            <!-- 8.4 Горячие блюда -->
-            <div class="form-group">
-                <label>Предпочтения в горячих блюдах *</label>
-                <select name="hotDish" required>
-                    <option value="" disabled selected>Выберите вариант</option>
-                    <option value="Рыба">Рыба</option>
-                    <option value="Мясо">Мясо</option>
-                    <option value="Без разницы">Без разницы</option>
-                </select>
-            </div>
-
-            <!-- 8.5 Музыка -->
-            <div class="form-group">
-                <label for="music">Музыкальные композиции, которые хотели бы услышать на празднике</label>
-                <textarea id="music" name="music" rows="3" placeholder="Например: Queen - I Want to Break Free, Любэ - Комбат..."></textarea>
-            </div>
-
-            <!-- 8.6 Кнопка отправки -->
-            <button type="submit" class="submit-btn">Отправить ответ</button>
-        </form>
-        <p id="formMessage" style="text-align:center; margin-top:20px; font-style:italic; color:var(--color4);"></p>
-    </section>
-
-    <!-- 9. Таймер -->
-    <section class="countdown">
-        <h2 class="section-title">До свадьбы осталось</h2>
-        <div class="timer">
-            <div class="timer-unit">
-                <div class="timer-number" id="days">000</div>
-                <div class="timer-label">дней</div>
-            </div>
-            <div class="timer-unit">
-                <div class="timer-number" id="hours">00</div>
-                <div class="timer-label">часов</div>
-            </div>
-            <div class="timer-unit">
-                <div class="timer-number" id="minutes">00</div>
-                <div class="timer-label">минут</div>
-            </div>
-            <div class="timer-unit">
-                <div class="timer-number" id="seconds">00</div>
-                <div class="timer-label">секунд</div>
-            </div>
-        </div>
-    </section>
+    <!-- Альтернативная кнопка (показывается если iframe не работает) -->
+    <div id="form-alternative" style="display: none; text-align: center; margin-top: 30px;">
+        <p style="margin-bottom: 20px; font-size: 1.1rem; color: var(--color4);">
+            <i class="fas fa-exclamation-triangle" style="margin-right: 8px;"></i>
+            Для загрузки формы может потребоваться несколько секунд
+        </p>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1FhQro3c_DevvHDseIpyyj1ETDrMWra-bSDnVI2BJ29u7lg/viewform" 
+           target="_blank" 
+           style="display: inline-block; padding: 15px 40px; background: var(--color3); color: white; 
+                  text-decoration: none; border-radius: 30px; font-size: 1.1rem; font-weight: 600;">
+            <i class="fas fa-external-link-alt" style="margin-right: 10px;"></i>
+            Открыть форму в новом окне
+        </a>
+    </div>
+</section>
 
     <!-- 10. Контакты -->
     <section id="contacts">
@@ -1040,7 +951,40 @@
             updateCountdown();
         });
     </script>
+<script>
+// Проверка загрузки формы
+setTimeout(function() {
+    const iframe = document.querySelector('iframe[src*="docs.google.com/forms"]');
+    const alternative = document.getElementById('form-alternative');
+    
+    if (iframe) {
+        // Проверяем, загрузился ли iframe
+        iframe.onload = function() {
+            console.log('Форма загружена успешно!');
+        };
+        
+        iframe.onerror = function() {
+            console.log('Ошибка загрузки формы');
+            if (alternative) alternative.style.display = 'block';
+        };
+        
+        // Дополнительная проверка через 5 секунд
+        setTimeout(function() {
+            try {
+                // Пытаемся получить доступ к содержимому iframe
+                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
+                if (iframeDoc && iframeDoc.body && iframeDoc.body.children.length === 0) {
+                    // Iframe пустой - показываем альтернативу
+                    if (alternative) alternative.style.display = 'block';
+                }
+            } catch (e) {
+                // Ошибка кросс-доменного доступа (нормально для Google Forms)
+                // Форма вероятно загрузилась
+                console.log('Форма Google Forms загружается...');
+            }
+        }, 5000);
+    }
+}, 1000);
+</script>
 </body>
-
 </html>
-
