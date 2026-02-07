@@ -247,7 +247,7 @@
             color: var(--color4);
         }
 
-        /* Дресс-код */
+        /* Дресс-код (без названий цветов) */
         .dress-code-colors {
             display: flex;
             justify-content: center;
@@ -266,13 +266,8 @@
             border: 3px solid white;
             box-shadow: 0 5px 15px rgba(0,0,0,0.1);
         }
-        .color-name {
-            font-weight: 500;
-            color: var(--color4);
-            font-size: 0.9rem;
-        }
 
-        /* Форма */
+        /* Форма для гостей */
         .form-section {
             background-color: #f8f4f2;
         }
@@ -510,9 +505,6 @@
                 width: 60px;
                 height: 60px;
             }
-            .color-name {
-                font-size: 0.8rem;
-            }
             
             /* Форма для мобильных */
             .radio-group, .checkbox-group {
@@ -665,12 +657,11 @@
             <div class="place-text">
                 <h3>Банкетный зал "Береза"</h3>
                 <p>Автодорога Курган-Звериноголовское, 14-й километр.</p>
-                <!-- Убрана ссылка "Смотреть на карте" из этого блока -->
             </div>
         </div>
     </section>
 
-    <!-- 5. Проезд (Карта) - теперь просто ссылка -->
+    <!-- 5. Проезд -->
     <section id="map">
         <h2 class="section-title">Проезд</h2>
         <div style="text-align: center; margin-top: 30px;">
@@ -724,123 +715,156 @@
     </section>
 
     <!-- 7. Дресс-код (без названий цветов) -->
-<section id="dresscode">
-    <h2 class="section-title">Дресс-код</h2>
-    <p class="intro-text" style="font-size:1.2rem;">Нам будет очень приятно, если вы поддержите цветовую гамму торжества и выберете наряды в соответствии с цветовой палитрой нашей свадьбы.</p>
-    <div class="dress-code-colors">
-        <div class="color-item"><div class="color-circle" style="background-color: rgb(228, 208, 201);"></div></div>
-        <div class="color-item"><div class="color-circle" style="background-color: rgb(202, 171, 154);"></div></div>
-        <div class="color-item"><div class="color-circle" style="background-color: rgb(190, 10, 10);"></div></div>
-        <div class="color-item"><div class="color-circle" style="background-color: rgb(96, 5, 5);"></div></div>
-        <div class="color-item"><div class="color-circle" style="background-color: rgb(0, 0, 0);"></div></div>
-    </div>
-</section>
-
-<!-- 8. Форма для гостей (с сохранением красивого оформления) -->
-<section class="form-section" id="rsvp">
-    <h2 class="section-title">Ваши ответы</h2>
-    <p class="intro-text" style="margin-bottom:50px; max-width:700px;">Пожалуйста, заполните эту форму до 1 июля 2026 года. Это поможет нам лучше организовать праздник.</p>
-
-    <form id="weddingForm" style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08);">
-        
-        <div class="form-group">
-            <label for="guestName"><i class="fas fa-user" style="color: var(--color4); margin-right: 8px;"></i> Ваше имя и фамилия *</label>
-            <input type="text" id="guestName" name="guestName" required placeholder="Иван Иванов" disabled style="background: #f9f9f9; cursor: not-allowed;">
-            <p style="font-size: 0.9rem; color: #666; margin-top: 8px; font-style: italic;">Заполняется в Google Forms</p>
-        </div>
-
-        <div class="form-group">
-            <label><i class="fas fa-calendar-check" style="color: var(--color4); margin-right: 8px;"></i> Присутствие *</label>
-            <div class="radio-group">
-                <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
-                    <i class="fas fa-check-circle" style="margin-right: 8px;"></i> Я с удовольствием приду
-                </div>
-                <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
-                    <i class="fas fa-users" style="margin-right: 8px;"></i> Приду с парой
-                </div>
-                <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
-                    <i class="fas fa-calendar-times" style="margin-right: 8px;"></i> К сожалению, не смогу
-                </div>
+    <section id="dresscode">
+        <h2 class="section-title">Дресс-код</h2>
+        <p class="intro-text" style="font-size:1.2rem;">Нам будет очень приятно, если вы поддержите цветовую гамму торжества и выберете наряды в соответствии с цветовой палитрой нашей свадьбы.</p>
+        <div class="dress-code-colors">
+            <div class="color-item">
+                <div class="color-circle" style="background-color: rgb(228, 208, 201);"></div>
+            </div>
+            <div class="color-item">
+                <div class="color-circle" style="background-color: rgb(202, 171, 154);"></div>
+            </div>
+            <div class="color-item">
+                <div class="color-circle" style="background-color: rgb(190, 10, 10);"></div>
+            </div>
+            <div class="color-item">
+                <div class="color-circle" style="background-color: rgb(96, 5, 5);"></div>
+            </div>
+            <div class="color-item">
+                <div class="color-circle" style="background-color: rgb(0, 0, 0);"></div>
             </div>
         </div>
+    </section>
 
-        <div class="form-group">
-            <label><i class="fas fa-wine-glass-alt" style="color: var(--color4); margin-right: 8px;"></i> Предпочтения в напитках</label>
-            <div class="checkbox-group">
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Шампанское</div>
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Красное сухое вино</div>
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Красное полусладкое</div>
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Белое сухое вино</div>
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Белое полусладкое</div>
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Коньяк</div>
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Водка</div>
-                <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Безалкогольные</div>
-            </div>
-        </div>
+    <!-- 8. Форма для гостей с красивым оформлением -->
+    <section class="form-section" id="rsvp">
+        <h2 class="section-title">Ваши ответы</h2>
+        <p class="intro-text" style="margin-bottom:50px; max-width:700px;">Пожалуйста, заполните эту форму до 1 июля 2026 года. Это поможет нам лучше организовать праздник.</p>
 
-        <div class="form-group">
-            <label><i class="fas fa-utensils" style="color: var(--color4); margin-right: 8px;"></i> Предпочтения в горячих блюдах *</label>
-            <select name="hotDish" required disabled style="background: #f9f9f9; cursor: not-allowed;">
-                <option value="" selected>Выберите вариант (в Google Forms)</option>
-                <option value="Рыба">Рыба</option>
-                <option value="Мясо">Мясо</option>
-                <option value="Без разницы">Без разницы</option>
-            </select>
-        </div>
-
-        <!-- НОВЫЙ БЛОК: Трансфер -->
-        <div class="form-group" style="background: rgba(228, 208, 201, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--color3);">
-            <label style="color: var(--color4); font-size: 1.1rem;">
-                <i class="fas fa-car" style="margin-right: 10px;"></i> 
-                Нужен ли трансфер? *
-            </label>
-            <div class="radio-group">
-                <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
-                    <i class="fas fa-arrow-right" style="margin-right: 8px;"></i> Нужен туда
-                </div>
-                <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
-                    <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Нужен обратно
-                </div>
-                <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
-                    <i class="fas fa-exchange-alt" style="margin-right: 8px;"></i> Нужен туда и обратно
-                </div>
-                <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
-                    <i class="fas fa-times-circle" style="margin-right: 8px;"></i> Не нужен
-                </div>
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label for="music"><i class="fas fa-music" style="color: var(--color4); margin-right: 8px;"></i> Музыкальные композиции, которые хотели бы услышать</label>
-            <textarea id="music" name="music" rows="3" placeholder="Например: Queen - I Want to Break Free, Любэ - Комбат..." disabled style="background: #f9f9f9; cursor: not-allowed;"></textarea>
-        </div>
-
-        <!-- КРАСИВАЯ КНОПКА ДЛЯ ПЕРЕХОДА НА GOOGLE FORMS -->
-        <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, rgba(228,208,201,0.1) 0%, rgba(202,171,154,0.1) 100%); border-radius: 10px; border: 2px dashed var(--color2);">
-            <div style="font-size: 3.5rem; color: var(--color4); margin-bottom: 15px;">
-                <i class="fas fa-external-link-alt"></i>
-            </div>
-            <h3 style="color: var(--color4); margin-bottom: 10px;">Форма ответов на Google Forms</h3>
-            <p style="margin-bottom: 25px; color: var(--color5);">Все вопросы выше включены в форму, включая вопрос о трансфере</p>
+        <div style="max-width: 700px; margin: 0 auto; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 15px 40px rgba(0,0,0,0.08);">
             
-            <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1FhQro3c_DevvHDseIpyyj1ETDrMWra-bSDnVI2BJ29u7lg/viewform" 
-               target="_blank"
-               class="submit-btn"
-               style="display: inline-flex; align-items: center; justify-content: center; padding: 18px 50px; font-size: 1.2rem; text-decoration: none; background: var(--color4); color: white; border-radius: 30px; transition: all 0.3s; border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(96,5,5,0.2);"
-               onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(96,5,5,0.3)'; this.style.backgroundColor='var(--color3)';"
-               onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(96,5,5,0.2)'; this.style.backgroundColor='var(--color4)';">
-                <i class="fab fa-google" style="margin-right: 12px; font-size: 1.3rem;"></i>
-                Перейти к заполнению формы
-            </a>
-            
-            <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
-                <i class="fas fa-info-circle" style="margin-right: 6px;"></i>
-                Откроется в новой вкладке. После заполнения можете закрыть её.
-            </p>
-        </div>
+            <div class="form-group">
+                <label for="guestName"><i class="fas fa-user" style="color: var(--color4); margin-right: 8px;"></i> Ваше имя и фамилия *</label>
+                <input type="text" id="guestName" name="guestName" required placeholder="Иван Иванов" disabled style="background: #f9f9f9; cursor: not-allowed;">
+                <p style="font-size: 0.9rem; color: #666; margin-top: 8px; font-style: italic;">Заполняется в Google Forms</p>
+            </div>
 
-    </form>
-</section>
+            <div class="form-group">
+                <label><i class="fas fa-calendar-check" style="color: var(--color4); margin-right: 8px;"></i> Присутствие *</label>
+                <div class="radio-group">
+                    <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
+                        <i class="fas fa-check-circle" style="margin-right: 8px;"></i> Я с удовольствием приду
+                    </div>
+                    <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
+                        <i class="fas fa-users" style="margin-right: 8px;"></i> Приду с парой
+                    </div>
+                    <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
+                        <i class="fas fa-calendar-times" style="margin-right: 8px;"></i> К сожалению, не смогу
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-wine-glass-alt" style="color: var(--color4); margin-right: 8px;"></i> Предпочтения в напитках</label>
+                <div class="checkbox-group">
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Шампанское</div>
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Красное сухое вино</div>
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Красное полусладкое</div>
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Белое сухое вино</div>
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Белое полусладкое</div>
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Коньяк</div>
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Водка</div>
+                    <div class="checkbox-option" style="opacity: 0.6; cursor: not-allowed;">Безалкогольные</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label><i class="fas fa-utensils" style="color: var(--color4); margin-right: 8px;"></i> Предпочтения в горячих блюдах *</label>
+                <select name="hotDish" required disabled style="background: #f9f9f9; cursor: not-allowed;">
+                    <option value="" selected>Выберите вариант (в Google Forms)</option>
+                    <option value="Рыба">Рыба</option>
+                    <option value="Мясо">Мясо</option>
+                    <option value="Без разницы">Без разницы</option>
+                </select>
+            </div>
+
+            <!-- Блок: Трансфер -->
+            <div class="form-group" style="background: rgba(228, 208, 201, 0.1); padding: 20px; border-radius: 10px; border-left: 4px solid var(--color3);">
+                <label style="color: var(--color4); font-size: 1.1rem;">
+                    <i class="fas fa-car" style="margin-right: 10px;"></i> 
+                    Нужен ли трансфер? *
+                </label>
+                <div class="radio-group">
+                    <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
+                        <i class="fas fa-arrow-right" style="margin-right: 8px;"></i> Нужен туда
+                    </div>
+                    <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
+                        <i class="fas fa-arrow-left" style="margin-right: 8px;"></i> Нужен обратно
+                    </div>
+                    <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
+                        <i class="fas fa-exchange-alt" style="margin-right: 8px;"></i> Нужен туда и обратно
+                    </div>
+                    <div class="radio-option" style="opacity: 0.6; cursor: not-allowed;">
+                        <i class="fas fa-times-circle" style="margin-right: 8px;"></i> Не нужен
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="music"><i class="fas fa-music" style="color: var(--color4); margin-right: 8px;"></i> Музыкальные композиции, которые хотели бы услышать</label>
+                <textarea id="music" name="music" rows="3" placeholder="Например: Queen - I Want to Break Free, Любэ - Комбат..." disabled style="background: #f9f9f9; cursor: not-allowed;"></textarea>
+            </div>
+
+            <!-- Кнопка для перехода на Google Forms -->
+            <div style="text-align: center; margin-top: 40px; padding: 30px; background: linear-gradient(135deg, rgba(228,208,201,0.1) 0%, rgba(202,171,154,0.1) 100%); border-radius: 10px; border: 2px dashed var(--color2);">
+                <div style="font-size: 3.5rem; color: var(--color4); margin-bottom: 15px;">
+                    <i class="fas fa-external-link-alt"></i>
+                </div>
+                <h3 style="color: var(--color4); margin-bottom: 10px;">Форма ответов на Google Forms</h3>
+                <p style="margin-bottom: 25px; color: var(--color5);">Все вопросы выше включены в форму, включая вопрос о трансфере</p>
+                
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSc1FhQro3c_DevvHDseIpyyj1ETDrMWra-bSDnVI2BJ29u7lg/viewform" 
+                   target="_blank"
+                   class="submit-btn"
+                   style="display: inline-flex; align-items: center; justify-content: center; padding: 18px 50px; font-size: 1.2rem; text-decoration: none; background: var(--color4); color: white; border-radius: 30px; transition: all 0.3s; border: none; cursor: pointer; box-shadow: 0 8px 20px rgba(96,5,5,0.2);"
+                   onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 12px 25px rgba(96,5,5,0.3)'; this.style.backgroundColor='var(--color3)';"
+                   onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 8px 20px rgba(96,5,5,0.2)'; this.style.backgroundColor='var(--color4)';">
+                    <i class="fab fa-google" style="margin-right: 12px; font-size: 1.3rem;"></i>
+                    Перейти к заполнению формы
+                </a>
+                
+                <p style="margin-top: 20px; font-size: 0.9rem; color: #666;">
+                    <i class="fas fa-info-circle" style="margin-right: 6px;"></i>
+                    Откроется в новой вкладке. После заполнения можете закрыть её.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- 9. Таймер -->
+    <section class="countdown">
+        <h2 class="section-title">До свадьбы осталось</h2>
+        <div class="timer">
+            <div class="timer-unit">
+                <div class="timer-number" id="days">000</div>
+                <div class="timer-label">дней</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-number" id="hours">00</div>
+                <div class="timer-label">часов</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-number" id="minutes">00</div>
+                <div class="timer-label">минут</div>
+            </div>
+            <div class="timer-unit">
+                <div class="timer-number" id="seconds">00</div>
+                <div class="timer-label">секунд</div>
+            </div>
+        </div>
+    </section>
 
     <!-- 10. Контакты -->
     <section id="contacts">
@@ -893,9 +917,8 @@
     </footer>
 
     <script>
-        // 9. Таймер обратного отсчета - исправленная версия для всех устройств включая iOS
-        // Используем формат даты, который понимает iOS
-        const weddingDate = new Date(2026, 7, 30, 16, 30, 0).getTime(); // Месяц 7 = август (0-11)
+        // 9. Таймер обратного отсчета
+        const weddingDate = new Date(2026, 7, 30, 16, 30, 0).getTime();
 
         function updateCountdown() {
             const now = new Date().getTime();
@@ -912,7 +935,6 @@
             const minutes = Math.floor((timeLeft % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((timeLeft % (1000 * 60)) / 1000);
 
-            // Безопасное обновление DOM
             const daysEl = document.getElementById('days');
             const hoursEl = document.getElementById('hours');
             const minutesEl = document.getElementById('minutes');
@@ -924,71 +946,8 @@
             if (secondsEl) secondsEl.textContent = seconds.toString().padStart(2, '0');
         }
 
-        // Простой и надежный интервал для всех устройств
         const countdownInterval = setInterval(updateCountdown, 1000);
-
-        // Обновляем сразу при загрузке
         updateCountdown();
-
-        // Также обновляем при возвращении на вкладку
-        document.addEventListener('visibilitychange', function() {
-            if (!document.hidden) {
-                updateCountdown();
-            }
-        });
-
-        // 8.6 Обработка формы
-        document.getElementById('weddingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-
-            // Собираем данные формы
-            const formData = new FormData(this);
-            const data = {};
-            formData.forEach((value, key) => {
-                if (key === 'drinks') {
-                    if (!data[key]) data[key] = [];
-                    data[key].push(value);
-                } else {
-                    data[key] = value;
-                }
-            });
-
-            // Здесь должна быть отправка данных на сервер
-            // Например, с помощью fetch на указанный вами URL
-            // ВНИМАНИЕ: Замените URL на ваш реальный адрес для сбора данных!
-            const submissionURL = 'https://example.com/wedding-form-handler'; // ЗАМЕНИТЕ ЭТОТ АДРЕС
-
-            // Эмуляция успешной отправки (удалите этот блок и раскомментируйте fetch ниже)
-            document.getElementById('formMessage').innerHTML = 'Спасибо! Ваш ответ успешно отправлен. Мы свяжемся с вами ближе к событию.';
-            document.getElementById('formMessage').style.color = 'var(--color4)';
-            this.reset();
-            window.scrollTo({top: document.getElementById('rsvp').offsetTop, behavior: 'smooth'});
-
-            /*
-            // РЕАЛЬНАЯ ОТПРАВКА (раскомментируйте и укажите свой URL)
-            fetch(submissionURL, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data)
-            })
-            .then(response => {
-                if(response.ok) {
-                    document.getElementById('formMessage').innerHTML = 'Спасибо! Ваш ответ успешно отправлен.';
-                    document.getElementById('formMessage').style.color = 'green';
-                    document.getElementById('weddingForm').reset();
-                } else {
-                    throw new Error('Ошибка сети');
-                }
-            })
-            .catch(error => {
-                document.getElementById('formMessage').innerHTML = 'Произошла ошибка. Пожалуйста, отправьте ответ позже или свяжитесь с нами по телефону.';
-                document.getElementById('formMessage').style.color = 'red';
-                console.error('Error:', error);
-            });
-            */
-        });
 
         // Плавная прокрутка для якорных ссылок
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -1006,53 +965,10 @@
             });
         });
         
-        // Улучшение для мобильных устройств: предотвращение масштабирования при фокусе на полях формы
-        document.querySelectorAll('input, textarea, select').forEach(element => {
-            element.addEventListener('focus', function() {
-                window.scrollTo(0, 0);
-                document.body.style.zoom = "1.0";
-            });
-        });
-        
         // Инициализация при загрузке страницы
         document.addEventListener('DOMContentLoaded', function() {
             updateCountdown();
         });
     </script>
-<script>
-// Проверка загрузки формы
-setTimeout(function() {
-    const iframe = document.querySelector('iframe[src*="docs.google.com/forms"]');
-    const alternative = document.getElementById('form-alternative');
-    
-    if (iframe) {
-        // Проверяем, загрузился ли iframe
-        iframe.onload = function() {
-            console.log('Форма загружена успешно!');
-        };
-        
-        iframe.onerror = function() {
-            console.log('Ошибка загрузки формы');
-            if (alternative) alternative.style.display = 'block';
-        };
-        
-        // Дополнительная проверка через 5 секунд
-        setTimeout(function() {
-            try {
-                // Пытаемся получить доступ к содержимому iframe
-                const iframeDoc = iframe.contentDocument || iframe.contentWindow.document;
-                if (iframeDoc && iframeDoc.body && iframeDoc.body.children.length === 0) {
-                    // Iframe пустой - показываем альтернативу
-                    if (alternative) alternative.style.display = 'block';
-                }
-            } catch (e) {
-                // Ошибка кросс-доменного доступа (нормально для Google Forms)
-                // Форма вероятно загрузилась
-                console.log('Форма Google Forms загружается...');
-            }
-        }, 5000);
-    }
-}, 1000);
-</script>
 </body>
 </html>
