@@ -991,58 +991,56 @@
         });
 
         // 3. Обработка формы отправки
-        document.getElementById('weddingForm').addEventListener('submit', function(event) {
-            event.preventDefault();
-            
-            // Показываем загрузку
-            const submitBtn = document.querySelector('.submit-btn');
-            const originalText = submitBtn.innerHTML;
-            submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
-            submitBtn.disabled = true;
-            
-            // Собираем данные из формы
-            const formData = {
-                guestName: document.getElementById('guestName').value,
-                attendance: document.querySelector('input[name="attendance"]:checked')?.value || '',
-                hotDish: document.getElementById('hotDish').value,
-                transfer: document.querySelector('input[name="transfer"]:checked')?.value || '',
-                music: document.getElementById('music').value
-            };
-            
-            // Собираем напитки (чекбоксы)
-            const drinksCheckboxes = document.querySelectorAll('input[name="drinks"]:checked');
-            formData.drinks = Array.from(drinksCheckboxes).map(cb => cb.value).join(', ');
-            
-            // URL вашего Google Apps Script
-            const scriptUrl = 'https://script.google.com/macros/s/AKfycbxXfgG4caX4QH5G3bTi9rzC0zmyVuM2DzkdTgvtMzocsqroHM9nNiyQwQEgecnbLaJ6FA/exec';
-            
-            // Отправляем данные
-            fetch(scriptUrl, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(formData)
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Ошибка сети');
-                }
-                return response.text();
-            })
-            .then(text => {
-                showFormMessage('Спасибо! Ваш ответ успешно отправлен.', 'success');
-                document.getElementById('weddingForm').reset();
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                showFormMessage('Ошибка при отправке. Пожалуйста, попробуйте еще раз или свяжитесь с нами напрямую.', 'error');
-            })
-            .finally(() => {
-                submitBtn.innerHTML = originalText;
-                submitBtn.disabled = false;
-            });
-        });
+        document.getElementById('weddingForm').addEventListener('submit', async function(event) {
+    event.preventDefault();
+
+    // 1. Показываем индикатор загрузки
+    const submitBtn = document.querySelector('.submit-btn');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Отправка...';
+    submitBtn.disabled = true;
+
+    // 2. Собираем данные из формы
+    const formData = {
+        guestName: document.getElementById('guestName').value.trim(),
+        attendance: document.querySelector('input[name="attendance"]:checked')?.value || '',
+        hotDish: document.getElementById('hotDish').value,
+        transfer: document.querySelector('input[name="transfer"]:checked')?.value || '',
+        music: document.getElementById('music').value.trim()
+    };
+
+    // 3. Собираем напитки (чекбоксы)
+    const drinksCheckboxes = document.querySelectorAll('input[name="drinks"]:checked');
+    formData.drinks = Array.from(drinksCheckboxes).map(cb => cb.value).join(', ');
+
+    // 4. Ваш URL веб-приложения
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbxXfgG4caX4QH5G3bTi9rzC0zmyVuM2DzkdTgvtMzocsqroHM9nNiyQwQEgecnbLaJ6FA/exec';
+
+    // 5. ОТПРАВКА С 'no-cors'
+    fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors', // ← ОБХОДИМ CORS
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(() => {
+        // УСПЕХ (браузер не получит ответ, но запрос ушел)
+        showFormMessage('✅ Спасибо! Ваш ответ отправлен.', 'success');
+        document.getElementById('weddingForm').reset(); // Очистить форму
+    })
+    .catch((error) => {
+        // ОШИБКА СЕТИ (запрос даже не отправился)
+        console.error('Сетевая ошибка:', error);
+        showFormMessage('⚠️ Ошибка сети. Попробуйте еще раз.', 'error');
+    })
+    .finally(() => {
+        // 6. Восстанавливаем кнопку
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    });
+});
         
         // Функция для показа сообщений
         function showFormMessage(message, type) {
