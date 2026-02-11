@@ -461,42 +461,36 @@
         .closing-photo {
     width: 100%;
     max-width: 600px;        /* Ширина блока */
-    height: 800px;           /* Высота блока — подберите на свой вкус */
+    height: 800px;           /* Вертикальный блок 3:4 */
     margin: 50px auto;
-    
-    /* Цвет фона (поля) — ваш бордовый */
-    background-color: var(--color4);
-    
-    /* Размещаем картинку по центру */
+    background-color: var(--color4);  /* Цвет полей (бордовый) */
     display: flex;
     justify-content: center;
     align-items: center;
-    
     border-radius: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-    
-    /* Чтобы картинка не вылезала за скруглённые углы */
     overflow: hidden;
-    position: relative
+    position: relative;      /* Для подписи */
 }
 
 .closing-img {
-    object-fit: contain;
-    padding: 10px 10px 30px 10px;  /* Снизу больше места — подпись */
-    background: white;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;    /* Фото целиком, поля по бокам */
+    object-position: center;
+    display: block;
 }
-        
-        .polaroid-caption {
+
+.polaroid-caption {
     position: absolute;
     bottom: 10px;
     left: 0;
     right: 0;
     text-align: center;
     font-family: 'Cormorant Garamond', serif;
-    color: var(--color4);
+    color: white;           /* Белая подпись на тёмном фоне */
     font-size: 1.2rem;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5); /* Чтобы лучше читалось */
 }
 
         /* Футер */
@@ -1107,6 +1101,7 @@
 </body>
 
 </html>
+
 
 
 
