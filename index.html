@@ -17,6 +17,12 @@
             --color5: rgba(0, 0, 0, 1);
             --color-light: #fff9f7;
         }
+        html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden; 
+}
         * {
             margin: 0;
             padding: 0;
@@ -56,9 +62,24 @@
 
         /* Герой-блок */
         .hero {
-            min-height: 100vh;
-            background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('https://stillreymary.github.io/wedding-invitation/images/hero-main.webp') center/cover no-repeat;
-        }
+    min-height: 100vh;          /* высота — на весь экран */
+    width: 100%;               /* ширина на всю страницу */
+    margin: 0;
+    padding: 0;
+    
+    /* Фон: градиент + ваша картинка. Главное — cover! */
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+                url('/wedding-invitation/images/hero-main.webp') center/cover no-repeat;
+    
+    /* Выравнивание текста по центру */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    
+    color: white; /* буквы белые */
+}
         .hero-names {
             font-size: 5rem;
             letter-spacing: 5px;
@@ -438,13 +459,45 @@
             letter-spacing: 3px;
         }
         .closing-photo {
-            width: 100%;
-            max-width: 600px;
-            height: 800px;
-            margin: 50px auto;
-            background: url('github.com/Stillreymary/wedding-invitation/images/1.jpg') center/cover no-repeat;
-            border-radius: 10px;
-        }
+    width: 100%;
+    max-width: 600px;        /* Ширина блока */
+    height: 400px;           /* Высота блока — подберите на свой вкус */
+    margin: 50px auto;
+    
+    /* Цвет фона (поля) — ваш бордовый */
+    background-color: var(--color4);
+    
+    /* Размещаем картинку по центру */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    border-radius: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    
+    /* Чтобы картинка не вылезала за скруглённые углы */
+    overflow: hidden;
+    position: relative
+}
+
+.closing-img {
+    object-fit: contain;
+    padding: 10px 10px 30px 10px;  /* Снизу больше места — подпись */
+    background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    box-sizing: border-box;
+}
+        
+        .polaroid-caption {
+    position: absolute;
+    bottom: 10px;
+    left: 0;
+    right: 0;
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    color: var(--color4);
+    font-size: 1.2rem;
+}
 
         /* Футер */
         footer {
@@ -457,10 +510,11 @@
 
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
-            .hero-names { 
-                font-size: 3rem; 
-                letter-spacing: 2px;
-            }
+    .closing-photo {
+        height: 350px;      /* На телефоне высота поменьше */
+        margin: 30px auto;
+    }
+}
             .section-title { 
                 font-size: 2.2rem; 
                 margin-bottom: 30px;
@@ -930,7 +984,10 @@
     <section class="closing">
         <h2 class="closing-names">Будем рады видеть Вас<br>на нашем празднике!</h2>
         <p style="font-size:1.5rem; max-width:600px; margin:0 auto;">С любовью и нетерпением ждём этот день, чтобы разделить его с вами.</p>
-        <div class="closing-photo"></div>
+        <div class="closing-photo">
+    <img src="/wedding-invitation/images/1.jpg" alt="Александр и Екатерина" class="closing-img">
+    <p class="polaroid-caption">30.08.2026</p>
+</div>
         <h3 style="font-size:3rem; margin-top:50px;">Александр & Екатерина</h3>
     </section>
 
@@ -1050,6 +1107,7 @@
 </body>
 
 </html>
+
 
 
 
