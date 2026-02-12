@@ -512,26 +512,26 @@
 
         /* Адаптивность для мобильных устройств */
         @media (max-width: 768px) {
-    .closing-photo {
-        height: 350px;      /* На телефоне высота поменьше */
-        margin: 30px auto;
-    }
-            .hero {
-        align-items: flex-start;    /* Прижимаем содержимое к верху */
-        padding-top: 15vh;          /* Отступ сверху в процентах от высоты экрана */
+    .hero {
+        padding-top: 15vh;      /* Текст опускается вниз */
     }
 
     .hero-names {
-        font-size: 2.5rem;         /* Уменьшаем размер (было 5rem, на мобильных станет 2.5rem) */
-        line-height: 1.2;          /* Междустрочный интервал */
+        font-size: 2.5rem;      /* Уменьшаем заголовок */
+        line-height: 1.2;
         margin-bottom: 0.5rem;
     }
 
     .hero-date {
-        font-size: 1.3rem;         /* Дата тоже чуть меньше */
+        font-size: 1.3rem;      /* Уменьшаем дату */
         margin-top: 10px;
     }
 }
+    .closing-photo {
+        height: 350px;      /* На телефоне высота поменьше */
+        margin: 30px auto;
+    }
+        
             .section-title { 
                 font-size: 2.2rem; 
                 margin-bottom: 30px;
@@ -1176,6 +1176,7 @@
 </body>
 
 </html>
+
 
 
 
